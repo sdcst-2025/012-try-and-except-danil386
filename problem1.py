@@ -29,6 +29,28 @@ The roots are -4.0 and -4.0
 import os
 os.system('cls')
 
+import math
+
 
 print("Enter in the coefficients for a quadratic equation in the format:")
 print("  ax^2 + bx + c = 0")
+
+a = input("enter 'a' value: ")
+b = input("enter 'b' value: ")
+c = input("enter 'c' value: ")
+
+try:
+  a = float(a)
+  b = float(b)
+  c = float(c)
+  try:
+    p = (((-b) + math.sqrt(((b**2)-(4*a*c))))/(2*a))
+    n = (((-b) - math.sqrt(((b**2)-(4*a*c))))/(2*a))
+    p = round(p,2)
+    n = round(n,2)
+    print(f"The roots are {p} and {n}")
+  except:
+    print("There are no real roots")
+except:
+  print("These are not valid values for a, b or c")
+
